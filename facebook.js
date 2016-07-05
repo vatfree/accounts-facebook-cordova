@@ -26,13 +26,21 @@ if (Meteor.isClient) {
           if (response.status != "connected") {
             facebookConnectPlugin.login(Meteor.settings.public.facebook.permissions,
                 fbLoginSuccess,
-                function (error) { console.log("" + error) }
+                function (error) { 
+                  console.log("" + error) 
+                  // throw new Meteor.Error(500, error);
+                  callback(new Meteor.Error(500, error));
+                }
             );
           } else {
             fbLoginSuccess(response);
           }
         },
-        function (error) { console.log("" + error) }
+        function (error) { 
+          console.log("" + error) 
+          callback(new Meteor.Error(500, error));
+          // throw new Meteor.Error(500, error);
+        }
       );
     } else {
       Facebook.requestCredential(options, credentialRequestCompleteCallback);
