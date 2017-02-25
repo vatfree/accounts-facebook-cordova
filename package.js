@@ -12,8 +12,8 @@ Package.on_use(function(api) {
   // Export Accounts (etc) to packages using this one.
   api.imply('accounts-base', ['client', 'server']);
   api.use('accounts-oauth', ['client', 'server']);
-  api.use('facebook', ['client', 'server']);
-  
+  api.use('facebook-oauth', ['client', 'server']);
+
   api.use('service-configuration', ['client', 'server']);
   api.use('http', ['server']);
   api.use('underscore', 'server');
