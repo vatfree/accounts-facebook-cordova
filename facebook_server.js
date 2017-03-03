@@ -38,7 +38,7 @@ var getIdentity = function (accessToken, fields) {
     return HTTP.get("https://graph.facebook.com/me", {
       params: {
         access_token: accessToken,
-        fields: fields
+        fields: fields.join(",")
       }
     }).data;
   } catch (err) {
