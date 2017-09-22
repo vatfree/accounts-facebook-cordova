@@ -49,7 +49,7 @@ var getIdentity = function (accessToken, fields) {
 
 var getProfilePicture = function (accessToken) {
   try {
-    return HTTP.get("https://graph.facebook.com/v2.0/me/picture/?redirect=false", {
+    return HTTP.get("https://graph.facebook.com/v2.8/me/picture/?redirect=false", {
       params: {access_token: accessToken}}).data.data.url;
   } catch (err) {
     throw _.extend(new Error("Failed to fetch identity from Facebook. " + err.message),
