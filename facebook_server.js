@@ -6,13 +6,11 @@ Accounts.registerLoginHandler(function(loginRequest) {
   loginRequest = loginRequest.authResponse;
 
   var whitelisted = ['id', 'email', 'name', 'first_name',
-      'last_name', 'link', 'gender', 'locale', 'age_range'];
+      'last_name', 'gender', 'locale', 'user_birthday'];
 
   var identity = getIdentity(loginRequest.accessToken, whitelisted);
 
   var profilePicture = getProfilePicture(loginRequest.accessToken);
-
-  console.log(profilePicture);
 
   var serviceData = {
     accessToken: loginRequest.accessToken,
