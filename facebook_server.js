@@ -6,7 +6,7 @@ Accounts.registerLoginHandler(function(loginRequest) {
   loginRequest = loginRequest.authResponse;
 
   var whitelisted = ['id', 'email', 'name', 'first_name',
-      'last_name', 'gender', 'locale', 'user_birthday'];
+      'last_name', 'gender', 'locale', 'birthday'];
 
   var identity = getIdentity(loginRequest.accessToken, whitelisted);
 
