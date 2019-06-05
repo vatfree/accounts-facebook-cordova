@@ -22,7 +22,7 @@ This packages replaces the accounts-facebook package. It works with [cordova-plu
 
 ##### Package Installation
 ````
-meteor add btafel:accounts-facebook-cordova
+meteor add sajhu:accounts-facebook-cordova
 ````
 *Note: For testing you can also add accounts-ui package.*
 
